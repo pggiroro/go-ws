@@ -1,3 +1,5 @@
 module github.com/pggiroro/go-ws
 
-go 1.16
+go 1.18
+
+require github.com/gobwas/ws v1.1.0
