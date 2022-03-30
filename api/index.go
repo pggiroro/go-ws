@@ -15,7 +15,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		// handle error
 	}
 	//go func() {
-	defer conn.Close()
+	//defer conn.Close()
 
 	for {
 		msg, op, err := wsutil.ReadClientData(conn)
