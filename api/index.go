@@ -14,18 +14,18 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		// handle error
 	}
-	go func() {
-		defer conn.Close()
+	//go func() {
+	defer conn.Close()
 
-		for {
-			msg, op, err := wsutil.ReadClientData(conn)
-			fmt.Println("read msg is " + string(msg))
-			if err != nil {
-			}
-			err = wsutil.WriteServerMessage(conn, op, msg)
-			if err != nil {
-				// handle error
-			}
+	for {
+		msg, op, err := wsutil.ReadClientData(conn)
+		fmt.Println("read msg is " + string(msg))
+		if err != nil {
 		}
-	}()
+		err = wsutil.WriteServerMessage(conn, op, msg)
+		if err != nil {
+			// handle error
+		}
+	}
+	//}()
 }
